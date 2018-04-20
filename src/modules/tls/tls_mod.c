@@ -563,7 +563,7 @@ static int tls_engine_init()
 		}
 		ksr_tls_engine = ENGINE_by_id(tls_engine_settings.engine.s);
 		if (!ksr_tls_engine) {
-			LM_ERR("OpenSSL failed to obtain ENGINE: %*s\n", tls_engine_settings.engine_config.len, tls_engine_settings.engine_config.s);
+			LM_ERR("OpenSSL failed to obtain ENGINE: %*s\n", tls_engine_settings.engine.len, tls_engine_settings.engine.s);
 			goto error;
 		}
 		err = ENGINE_init(ksr_tls_engine);
